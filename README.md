@@ -1,10 +1,14 @@
-# Zoltan Radics's Svelte homework for Cuez.
+@# Zoltan Radics's Svelte homework for Cuez.
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## What to do after cloning this repository?
+#### What to do after cloning this repository?
 
-Once you've cloned the project, run `npm ci`. Why `npm ci`? Because everytime you run `npm install`, npm will update the locked versions in your package-lock.json file and most probably that will hanging changes in your package-lock.json file so for now you only need `npm ci`.
+Once you've cloned the project:
+
+-  Run `npm ci`.
+-  Run `npm run test` (hopefully all tests will be green!)
+-  Run `npm run dev` (if you wish to run the project locally)
 
 ```bash
 npm run dev
@@ -13,7 +17,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+#### Building
 
 To create a production version of your app:
 
