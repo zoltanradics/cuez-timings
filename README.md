@@ -1,22 +1,10 @@
-# sv
+# Zoltan Radics's Svelte homework for Cuez.
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Creating a project
+## What to do after cloning this repository?
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned the project, run `npm ci`. Why `npm ci`? Because everytime you run `npm install`, npm will update the locked versions in your package-lock.json file and most probably that will hanging changes in your package-lock.json file so for now you only need `npm ci`.
 
 ```bash
 npm run dev
