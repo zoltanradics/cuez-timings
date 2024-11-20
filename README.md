@@ -2,7 +2,7 @@
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-#### What to do after cloning this repository?
+#### 🤔 What to do after cloning this repository?
 
 Once you've cloned the project:
 
