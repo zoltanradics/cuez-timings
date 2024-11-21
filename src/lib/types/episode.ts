@@ -1,4 +1,4 @@
-import type { KeyValueMap } from "./shared";
+import type { KeyValueMap } from './shared';
 
 export interface EpisodeData {
 	episode: Episode;
@@ -11,20 +11,20 @@ export enum EpisodeStatus {
 	// Possibly more statuses, but only 'active' status found in the procided json data
 }
 
-interface Episode {
+export interface Episode {
 	readonly id: string;
-    status: EpisodeStatus;
-    title: string;
-    parts: Array<string>;
+	status: EpisodeStatus;
+	title: string;
+	parts: Array<string>;
 }
 
 interface Part {
-	readonly id: string,
-	title: string,
-	items: Array<string>
+	readonly id: string;
+	title: string;
+	items: Array<string>;
 }
 
 interface Item {
-	readonly id: string,
-	title: string
+	readonly id: string;
+	title: string;
 }
