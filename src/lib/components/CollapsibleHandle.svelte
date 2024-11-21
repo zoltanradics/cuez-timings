@@ -4,10 +4,8 @@
 		label: string;
 	}
 
-	const { open, label }: CollapsibleHandleProps = $props();
+	let { open, label }: CollapsibleHandleProps = $props();
 </script>
 
-<span class="mr-2 text-xs">
-	<i class="fa-solid" class:fa-caret-down={open} class:fa-caret-right={!open}></i>
-</span>
+<i class="fa-solid mr-2 text-xs" class:fa-caret-down={open} class:fa-caret-right={!open}></i>
 <span class="font-semibold">{label}</span>

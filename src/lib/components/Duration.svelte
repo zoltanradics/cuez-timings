@@ -5,7 +5,7 @@
 		value: number;
 	}
 
-	const { value }: DurationProps = $props();
+	let { value }: DurationProps = $props();
 	const formattedDuration = formatDuration(value);
 </script>
 

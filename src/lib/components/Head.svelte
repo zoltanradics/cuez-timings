@@ -10,7 +10,7 @@
 		offAirTime: number;
 	}
 
-	const { status, onAirTime, offAirTime }: HeadProps = $props();
+	let { status, onAirTime, offAirTime }: HeadProps = $props();
 </script>
 
 <div class="w-full border-b border-gray-300">

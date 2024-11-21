@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { EpisodeStatus } from '$lib/types/episode';
 
-	const { status }: { status: EpisodeStatus } = $props();
+	let { status }: { status: EpisodeStatus } = $props();
 
 	function displayStatus(status: string): string {
 		switch (status) {
