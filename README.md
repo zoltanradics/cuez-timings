@@ -1,4 +1,4 @@
-## Zoltan Radics's Svelte homework for Cuez.
+## Zoltan Radics's homework for Cuez.
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
