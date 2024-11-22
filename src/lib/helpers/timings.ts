@@ -36,6 +36,15 @@ export function formatDuration(seconds: number): string {
 	return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
+/**
+ *
+ * mplement a function calculateTimings(episodeData, timingsData).
+ * This function should return a copy of timingsData with calculated frontTime, endTime, and backTime fields.
+ *
+ * @param {EpisodeData} episodeData
+ * @param {TimingsData} timingsData
+ * @returns {TimingsData}
+ */
 export function calculateTimings(episodeData: EpisodeData, timingsData: TimingsData): TimingsData {
 	const calculatedPartFields = calculatePartFields(episodeData, timingsData);
 	const calculatedItemFields = calculateItemFields(episodeData, {
