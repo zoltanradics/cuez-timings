@@ -21,7 +21,6 @@
 	 *
 	 */
 	const parts = convertToViewModel(episodeData, calculatedTimings);
-	console.log('parts', parts);
 </script>
 
 <RundownHead />
