@@ -3,7 +3,7 @@
 	import Duration from '$lib/components/Duration.svelte';
 	import Timestamp from '$lib/components/Timestamp.svelte';
 	import Item from '$lib/components/Item.svelte';
-	import Collapsible from './Collapsible.svelte';
+	import Collapsible from '$lib/components/Collapsible.svelte';
 
 	let { part } = $props();
 

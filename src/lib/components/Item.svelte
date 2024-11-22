@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Duration from './Duration.svelte';
+	import Duration from '$lib/components/Duration.svelte';
 	import CollapsibleHandle from '$lib/components/CollapsibleHandle.svelte';
 	import Timestamp from '$lib/components/Timestamp.svelte';
 	import Collapsible from '$lib/components/Collapsible.svelte';
