@@ -16,11 +16,11 @@
 	<div class="pt-2">
 		<div class="item box-border flex rounded-md border border-gray-300">
 			<div class="col p-2">
-				<div class="text-uppercase inline rounded-md bg-gray-600 p-1 text-sm uppercase text-white">
+				<div class="text-uppercase inline rounded-md bg-slate-400 p-1 text-sm uppercase text-white">
 					Item {index + 1}
 				</div>
 			</div>
-			<div class="col--wide border-r border-gray-300 p-2">
+			<div class="col--wide border-r border-gray-300 p-2 font-extrabold">
 				{item.title}
 			</div>
 			<div class="col border-r border-gray-300 p-2 text-right">
