@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			<Collapsible {open}>
-				<div class="m-2 border-r bg-slate-100 p-2">Some item content comes here.</div>
+				<div class="m-2 rounded-md border-r bg-slate-100 p-2">Some item content comes here.</div>
 			</Collapsible>
 		</div>
 	</div>
