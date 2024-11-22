@@ -95,14 +95,15 @@ function calculateItemFields(
 		const initialFrontTime = timingsData.part[partId].front_time;
 
 		episodeData.part[partId].items.forEach((itemId, index, array) => {
-			const estimatedDuration: number = timingsData.item[itemId].estimated_duration / 1000;
+			const estimatedDurationRaw = timingsData.item[itemId].estimated_duration;
+			const estimatedDuration: number = estimatedDurationRaw / 1000;
 			const previousItemId: string = array[index - 1];
 			const previousItem: TimingProperties = items[previousItemId];
 			const frontTime: number = index === 0 ? initialFrontTime : previousItem.end_time;
 			const endTime = frontTime + estimatedDuration;
 
 			items[itemId] = {
-				estimated_duration: estimatedDuration,
+				estimated_duration: estimatedDurationRaw,
 				front_time: frontTime,
 				end_time: endTime,
 				back_time: frontTime
@@ -121,14 +122,15 @@ function calculatePartFields(
 		const initialOnAirTime: number = timingsData.episode.on_air_time;
 		const previousPartId: string = array[index - 1];
 		const previousPart: TimingProperties = acc[previousPartId];
-		const estimatedDuration: number = timingsData.part[partId].estimated_duration / 1000;
+		const estimatedDurationRaw = timingsData.part[partId].estimated_duration;
+		const estimatedDuration: number = estimatedDurationRaw / 1000;
 		const frontTime: number = index === 0 ? initialOnAirTime : previousPart.end_time;
 		const endTime: number = frontTime + estimatedDuration;
 
 		return {
 			...acc,
 			[partId]: {
-				estimated_duration: estimatedDuration,
+				estimated_duration: estimatedDurationRaw,
 				front_time: frontTime,
 				end_time: endTime,
 				back_time: frontTime
@@ -140,13 +142,13 @@ function calculatePartFields(
 export function convertToViewModel(episodeData: EpisodeData, timingsData: TimingsData) {
 	return episodeData.episode.parts.map((partId) => ({
 		title: episodeData.part[partId].title,
-		estimatedDuration: timingsData.part[partId].estimated_duration,
+		estimatedDuration: timingsData.part[partId].estimated_duration / 1000,
 		frontTime: timingsData.part[partId].front_time,
 		endTime: timingsData.part[partId].end_time,
 		backTime: timingsData.part[partId].back_time,
 		items: episodeData.part[partId].items.map((itemId) => ({
 			title: episodeData.item[itemId].title,
-			estimatedDuration: timingsData.item[itemId].estimated_duration,
+			estimatedDuration: timingsData.item[itemId].estimated_duration / 1000,
 			frontTime: timingsData.item[itemId].front_time,
 			endTime: timingsData.item[itemId].end_time,
 			backTime: timingsData.item[itemId].back_time
