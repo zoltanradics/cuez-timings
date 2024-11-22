@@ -29,6 +29,13 @@ export function formatDuration(duration: number): string {
 		: `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
+/**
+ *
+ * Function to format timestamp into HH:MM:SS
+ *
+ * @param {number} timestamp
+ * @returns {string}
+ */
 export function formatTimestamp(timestamp: number): string {
 	// Convert to milliseconds
 	const date = new Date(timestamp * 1000);
