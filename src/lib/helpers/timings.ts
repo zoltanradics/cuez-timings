@@ -141,12 +141,14 @@ function calculatePartFields(
 
 export function convertToViewModel(episodeData: EpisodeData, timingsData: TimingsData) {
 	return episodeData.episode.parts.map((partId) => ({
+		id: partId,
 		title: episodeData.part[partId].title,
 		estimatedDuration: timingsData.part[partId].estimated_duration / 1000,
 		frontTime: timingsData.part[partId].front_time,
 		endTime: timingsData.part[partId].end_time,
 		backTime: timingsData.part[partId].back_time,
 		items: episodeData.part[partId].items.map((itemId) => ({
+			id: itemId,
 			title: episodeData.item[itemId].title,
 			estimatedDuration: timingsData.item[itemId].estimated_duration / 1000,
 			frontTime: timingsData.item[itemId].front_time,
