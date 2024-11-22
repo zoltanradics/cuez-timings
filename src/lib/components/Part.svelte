@@ -36,7 +36,7 @@
 </div>
 
 <Collapsible {open}>
-	<div class="part__item-list border-b border-gray-300">
+	<div class="part__item-list border-b border-gray-300 last:border-none">
 		{#each part.items as item, index}
 			<Item {index} {item} />
 		{/each}
