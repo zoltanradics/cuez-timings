@@ -1,7 +1,7 @@
 <script lang="ts">
 	interface CollapsibleHandleProps {
 		open: boolean;
-		label: string;
+		label?: string;
 		toggle: () => void;
 	}
 
