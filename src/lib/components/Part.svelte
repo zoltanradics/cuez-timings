@@ -10,7 +10,7 @@
 	let open = $state(true);
 </script>
 
-<div class="part__head flex border-b border-gray-300 bg-gray-100 font-semibold">
+<div class="part__head flex border-b border-gray-300 bg-gray-100 font-extrabold">
 	<div class="col p-2"></div>
 	<div class="col p-2">
 		<CollapsibleHandle {open} toggle={() => (open = !open)} label={'PART'} />
