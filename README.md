@@ -6,8 +6,8 @@ Everything you need to build a Svelte project, powered by [`sv`](https://github.
 
 Once you've cloned the project:
 
--  Run `npm ci`.
--  Run `npm run test` (hopefully all tests will be green!)
+-  Run `npm ci`. (if you don't know why, ask me next time we talk)
+-  Run `npm run test` (hopefully all tests will be green)
 -  Run `npm run dev` (if you wish to run the project locally)
 
 #### Building
