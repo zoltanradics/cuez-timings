@@ -14,18 +14,21 @@ export function calculateDifferenceBetweenTimestamps(start: number, end: number)
 
 /**
  *
- * Function to format duration (ms) into HH:MM:SS
+ * Function to format duration (s) into HH:MM:SS
  *
  * @param {number} duration
  * @returns {string}
  */
 export function formatDuration(duration: number): string {
-	const durationInSeconds = duration / 1000;
-	const hours = Math.floor(durationInSeconds / 3600);
-	const minutes = Math.floor((durationInSeconds % 3600) / 60);
-	const remainingSeconds = Math.floor(durationInSeconds % 60);
+	const hours = Math.floor(duration / 3600);
+	const minutes = Math.floor((duration % 3600) / 60);
+	const seconds = Math.floor(duration % 60);
 
 	return hours > 0
+		? `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+		: `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
 export function formatTimestamp(timestamp: number): string {
 	// Convert to milliseconds
 	const date = new Date(timestamp * 1000);

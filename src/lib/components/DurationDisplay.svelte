@@ -8,10 +8,7 @@
 	}
 
 	let { onAirTime, offAirTime }: DurationDisplayProps = $props();
-	const durationDifference = calculateDifferenceBetweenTimestamps(onAirTime, offAirTime);
 </script>
 
-<div>
-	<i class="fa-solid fa-stopwatch mr-2"></i>
-	<Duration value={durationDifference} />
-</div>
+<i class="fa-solid fa-stopwatch mr-2"></i>
+<Duration value={calculateDifferenceBetweenTimestamps(onAirTime, offAirTime)} />
