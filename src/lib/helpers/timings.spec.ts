@@ -1,5 +1,15 @@
-import { describe, it, expect } from 'vitest';
-import { calculateDifferenceBetweenTimestamps, formatDuration, formatTimestamp } from './timings';
+import { describe, it, expect, assert } from 'vitest';
+
+import {
+	calculateDifferenceBetweenTimestamps,
+	calculateTimings,
+	formatDuration,
+	formatTimestamp
+} from './timings';
+
+import episodeData from '../../data/episode.json';
+import timingsData from '../../data/timings.json';
+import timingsDataMock from '../../data/timings-mock.json';
 
 describe('calculateDifferenceBetweenTimestamps', () => {
 	it('Checing positive difference', () => {
@@ -40,5 +50,13 @@ describe('formatTimestamp', () => {
 
 	it('Checking 13:45', () => {
 		expect(formatTimestamp(1712238300)).toBe('13:45:00');
+	});
+});
+
+describe('calculateTimings', () => {
+	const calculatedTimings = calculateTimings(episodeData, timingsData);
+
+	it('Checking function with mocked data (comparing calculation with pre-calculated mock)', () => {
+		assert.deepEqual(calculatedTimings, timingsDataMock);
 	});
 });
