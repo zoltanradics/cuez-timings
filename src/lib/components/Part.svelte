@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Part } from '$lib/types/timings';
+	import type { Part } from '$lib/types/models';
 
 	import CollapsibleHandle from '$lib/components/CollapsibleHandle.svelte';
 	import Duration from '$lib/components/Duration.svelte';
