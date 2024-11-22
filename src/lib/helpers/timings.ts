@@ -56,7 +56,7 @@ export function formatTimestamp(timestamp: number): string {
 
 /**
  *
- * mplement a function calculateTimings(episodeData, timingsData).
+ * Implement a function calculateTimings(episodeData, timingsData).
  * This function should return a copy of timingsData with calculated frontTime, endTime, and backTime fields.
  *
  * @param {EpisodeData} episodeData
