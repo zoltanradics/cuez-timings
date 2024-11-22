@@ -5,8 +5,6 @@
 
 	let { episodeData, timingsData } = $props();
 
-	const partIds = episodeData.episode.parts;
-
 	/**
 	 *
 	 * Implement a function calculateTimings(episodeData, timingsData).
