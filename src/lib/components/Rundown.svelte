@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { calculateTimings, convertToViewModel } from '$lib/helpers/timings';
-	import PartNew from '$lib/components/PartNew.svelte';
+	import Part from '$lib/components/Part.svelte';
 	import RundownHead from '$lib/components/RundownHead.svelte';
 
 	let { episodeData, timingsData } = $props();
@@ -27,6 +27,6 @@
 <RundownHead />
 <div class="rundown__part-list">
 	{#each parts as part}
-		<PartNew {part} />
+		<Part {part} />
 	{/each}
 </div>
