@@ -95,15 +95,10 @@ function calculateItemFields(
 		const initialFrontTime = timingsData.part[partId].front_time;
 
 		episodeData.part[partId].items.forEach((itemId, index, array) => {
-			const estimatedDuration: number = convertMilisecondToSecond(
-				timingsData.item[itemId].estimated_duration
-			);
+			const estimatedDuration: number = timingsData.item[itemId].estimated_duration / 1000;
 			const previousItemId: string = array[index - 1];
-			const previousItem: TimingProperties = timingsData.item[previousItemId];
-			const frontTime: number =
-				index === 0
-					? initialFrontTime
-					: previousItem.front_time + convertMilisecondToSecond(previousItem.estimated_duration);
+			const previousItem: TimingProperties = items[previousItemId];
+			const frontTime: number = index === 0 ? initialFrontTime : previousItem.end_time;
 			const endTime = frontTime + estimatedDuration;
 
 			items[itemId] = {
@@ -126,13 +121,8 @@ function calculatePartFields(
 		const initialOnAirTime: number = timingsData.episode.on_air_time;
 		const previousPartId: string = array[index - 1];
 		const previousPart: TimingProperties = acc[previousPartId];
-		const estimatedDuration: number = convertMilisecondToSecond(
-			timingsData.part[partId].estimated_duration
-		);
-		const frontTime: number =
-			index === 0
-				? initialOnAirTime
-				: previousPart.front_time + convertMilisecondToSecond(previousPart.estimated_duration);
+		const estimatedDuration: number = timingsData.part[partId].estimated_duration / 1000;
+		const frontTime: number = index === 0 ? initialOnAirTime : previousPart.end_time;
 		const endTime: number = frontTime + estimatedDuration;
 
 		return {
