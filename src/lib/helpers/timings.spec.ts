@@ -1,9 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import {
-	calculateDifferenceBetweenTimestamps,
-	convertMilisecondToSecond,
-	formatDuration
-} from './timings';
+import { calculateDifferenceBetweenTimestamps, formatDuration, formatTimestamp } from './timings';
 
 describe('calculateDifferenceBetweenTimestamps', () => {
 	it('Checing positive difference', () => {
@@ -16,12 +12,6 @@ describe('calculateDifferenceBetweenTimestamps', () => {
 
 	it('Checing zero difference', () => {
 		expect(calculateDifferenceBetweenTimestamps(0, 0)).toBe(0);
-	});
-});
-
-describe('convertMilisecondToSecond', () => {
-	it('Convert 1000ms to 1sec', () => {
-		expect(convertMilisecondToSecond(1000)).toBe(1);
 	});
 });
 
@@ -40,5 +30,15 @@ describe('formatDuration', () => {
 
 	it('Checking one hour one minute one second', () => {
 		expect(formatDuration(3661)).toBe('01:01:01');
+	});
+});
+
+describe('formatTimestamp', () => {
+	it('Checking 13:00', () => {
+		expect(formatTimestamp(1712235600)).toBe('13:00:00');
+	});
+
+	it('Checking 13:45', () => {
+		expect(formatTimestamp(1712238300)).toBe('13:45:00');
 	});
 });
