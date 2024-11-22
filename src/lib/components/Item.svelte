@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { Item } from '$lib/types/timings';
+
 	import Duration from '$lib/components/Duration.svelte';
 	import CollapsibleHandle from '$lib/components/CollapsibleHandle.svelte';
 	import Timestamp from '$lib/components/Timestamp.svelte';
@@ -6,7 +8,7 @@
 
 	interface ItemProps {
 		index: number;
-		item: any;
+		item: Item;
 	}
 
 	let { index, item }: ItemProps = $props();

@@ -2,7 +2,7 @@
 	interface CollapsibleHandleProps {
 		open: boolean;
 		label?: string;
-		toggle: () => void;
+		toggle(): void;
 	}
 
 	let { open, label, toggle }: CollapsibleHandleProps = $props();

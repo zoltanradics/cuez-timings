@@ -1,9 +1,16 @@
 <script lang="ts">
+	import type { EpisodeData } from '$lib/types/episode';
+	import type { TimingsData } from '$lib/types/timings';
 	import { calculateTimings, convertToViewModel } from '$lib/helpers/timings';
 	import Part from '$lib/components/Part.svelte';
 	import RundownHead from '$lib/components/RundownHead.svelte';
 
-	let { episodeData, timingsData } = $props();
+	interface RundownProps {
+		episodeData: EpisodeData;
+		timingsData: TimingsData;
+	}
+
+	let { episodeData, timingsData }: RundownProps = $props();
 
 	/**
 	 *

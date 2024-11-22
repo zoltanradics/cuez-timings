@@ -1,5 +1,12 @@
 <script lang="ts">
-	let { children, open } = $props();
+	import type { Snippet } from 'svelte';
+
+	interface CollapsibleProps {
+		open: boolean;
+		children: Snippet;
+	}
+
+	let { children, open }: CollapsibleProps = $props();
 </script>
 
 {#if open}

@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { EpisodeStatus } from '$lib/types/episode';
 
-	let { status }: { status: EpisodeStatus } = $props();
+	interface SatusProps {
+		status: EpisodeStatus;
+	}
+
+	let { status }: SatusProps = $props();
 
 	function displayStatus(status: string): string {
 		switch (status) {
