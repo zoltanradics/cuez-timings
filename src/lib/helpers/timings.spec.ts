@@ -27,11 +27,11 @@ describe('convertMilisecondToSecond', () => {
 
 describe('formatDuration', () => {
 	it('Checking one second', () => {
-		expect(formatDuration(1)).toBe('00:00:01');
+		expect(formatDuration(1)).toBe('00:01');
 	});
 
 	it('Checking one minute', () => {
-		expect(formatDuration(60)).toBe('00:01:00');
+		expect(formatDuration(60)).toBe('01:00');
 	});
 
 	it('Checking one hour', () => {
