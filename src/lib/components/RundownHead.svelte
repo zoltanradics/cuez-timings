@@ -1,4 +1,4 @@
-<div class="rundown__head flex border-b border-gray-300 bg-white font-semibold text-stone-800">
+<div class="rundown__head flex border-b border-gray-300 bg-white text-stone-800">
 	<div class="col p-2"></div>
 	<div class="col p-2"></div>
 	<div class="col--wide border-r border-gray-300 p-2"></div>
