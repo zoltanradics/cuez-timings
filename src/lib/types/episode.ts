@@ -8,7 +8,7 @@ export interface EpisodeData {
 
 export enum EpisodeStatus {
 	ACTIVE = 'active'
-	// Possibly more statuses, but only 'active' status found in the procided json data
+	// Possibly more statuses, but only 'active' status was found in the provided json data sets
 }
 
 export interface Episode {
