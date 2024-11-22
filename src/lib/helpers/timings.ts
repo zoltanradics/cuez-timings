@@ -26,8 +26,22 @@ export function formatDuration(duration: number): string {
 	const remainingSeconds = Math.floor(durationInSeconds % 60);
 
 	return hours > 0
-		? `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`
-		: `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+export function formatTimestamp(timestamp: number): string {
+	// Convert to milliseconds
+	const date = new Date(timestamp * 1000);
+
+	// Extract the UTC values
+	const utcHours = date.getUTCHours();
+	const utcMinutes = date.getUTCMinutes();
+	const utcSeconds = date.getUTCSeconds();
+
+	// Convert UTC values to strings
+	const hours = String(utcHours).padStart(2, '0');
+	const minutes = String(utcMinutes).padStart(2, '0');
+	const seconds = String(utcSeconds).padStart(2, '0');
+
+	// Concat strings
+	return `${hours}:${minutes}:${seconds}`;
 }
 
 /**
