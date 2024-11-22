@@ -61,11 +61,19 @@ export function calculateTimings(episodeData: EpisodeData, timingsData: TimingsD
 	};
 }
 
+/**
+ *
+ * Calculate items frontTime, endTime, and backTime fields
+ *
+ * @param {EpisodeData} episodeData
+ * @param {TimingsData} timingsData
+ * @returns {KeyValueMap<TimingProperties>}
+ */
 function calculateItemFields(
 	episodeData: EpisodeData,
 	timingsData: TimingsData
 ): KeyValueMap<TimingProperties> {
-	const items = {};
+	const items: KeyValueMap<TimingProperties> = {};
 
 	episodeData.episode.parts.forEach((partId) => {
 		const initialFrontTime = timingsData.part[partId].front_time;
@@ -120,10 +128,10 @@ function calculatePartFields(
 				back_time: frontTime
 			}
 		};
-	}, {});
+	}, {} as KeyValueMap<TimingProperties>);
 }
 
-export function convertToViewModel(episodeData: any, timingsData: any) {
+export function convertToViewModel(episodeData: EpisodeData, timingsData: TimingsData) {
 	return episodeData.episode.parts.map((partId) => ({
 		title: episodeData.part[partId].title,
 		estimatedDuration: timingsData.part[partId].estimated_duration,
